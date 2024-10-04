@@ -1,6 +1,4 @@
 import express from "express";
-import Product from "../models/product.model.js";
-import mongoose from "mongoose";
 import {
   createProduct,
   deleteProduct,
@@ -17,9 +15,9 @@ router.get("/", getAllProducts);
 router.post("/", createProduct);
 
 //DELETE A PRODUCT
-router.delete("/", deleteProduct);
+router.delete("/:id", deleteProduct);
 
 //UPDATE A PRODUCT
-router.put("/", updateProduct);
+router.put("/:id", updateProduct);
 
 export default router;

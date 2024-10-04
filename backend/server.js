@@ -10,7 +10,10 @@ const app = express();
 
 app.use(express.json()); // Works as middleware which is a function that is run when sending reponse to the client, allows us to accept JSON data in the req.body
 
-app.use("/api/product", productRoutes);
+app.use("/api/products", productRoutes);
+// app.get("/", (req, res) => {
+//   res.send("Hi");
+// });
 
 app.listen(5000, () => {
   connectDB();
